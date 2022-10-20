@@ -9,5 +9,6 @@ pub fn using_modules(input: &str) {
         "pong" => commands::pong::do_stuff(),
         _ => "Oh no".to_string()
     };
-    use_actions!(commands::*::do_stuff())
+    //use_actions!({*}[=>](commands)*[do_stuff();])
+    use_actions!((src/commands))
 }
