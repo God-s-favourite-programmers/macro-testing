@@ -1,3 +1,2 @@
-use module_registration::import;
-
-import!("./src/commands");
+pub mod ping;
+pub mod pong;

@@ -1,3 +1,3 @@
-pub fn do_stuff() {
-    println!("ping!");
+pub fn do_stuff() -> String {
+    "Ping!".to_string()
 }
