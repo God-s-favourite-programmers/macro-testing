@@ -1,3 +1,4 @@
+use core::panic;
 use std::{fs::{self, ReadDir}};
 
 use proc_macro::{TokenStream};
@@ -69,7 +70,7 @@ pub fn invoke(input: TokenStream) -> TokenStream {
     };
 
     let names = get_file_names(dir);
-    let mut output = String::new();
+    let mut output = String::from("\"nope\".to_string(),\n");
     for name in names {
         output.push_str(&format!("\"{name}\" => {}::{}(),\n", directory.value().split("/").map(|s| s.to_string()).collect::<Vec<String>>().join("::"), function_name.value()))
     }
